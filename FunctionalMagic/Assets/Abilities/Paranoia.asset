@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7898463b012e5e642ab2265e5d4e3a4f, type: 3}
+  m_Name: Paranoia
+  m_EditorClassIdentifier: 
+  id: PARANOIA
+  abilityName: Paranoia
+  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  upgradeLevels: 1
+  descriptionPerUpgradeLevel:
+  - 
+  levelRequirement: 3
+  unlocksAbilities:
+  - 
+  unlockedOnStart: 1
+  abilityType: 3
+  currentUpgradeLevel: 1
+  unlocked: 1
