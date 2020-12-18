@@ -17,7 +17,8 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip dropParcel;
     [SerializeField] private AudioClip [] footsteps;
     [SerializeField] private AudioClip addXPSFX;
-    [SerializeField] private AudioClip levelUpSoundSFX;
+    [SerializeField] private AudioClip levelUpSFX;
+    [SerializeField] private AudioClip abilityUnlockedSFX;
     [SerializeField] private AudioSource notificationAudioSource;
     private bool useFootstep1 = true;
     [SerializeField] private AudioSource footstepsAudioSource1;
@@ -126,7 +127,12 @@ public class Player : MonoBehaviour
 
     public void PlayLevelUpAudio()
     {
-        PlayAudio(notificationAudioSource, levelUpSoundSFX, false);
+        PlayAudio(notificationAudioSource, levelUpSFX, false);
+    }
+
+    public void PlayAbilityUnlockedAudio()
+    {
+        PlayAudio(notificationAudioSource, abilityUnlockedSFX, false);
     }
 
     public void AddXP(int amount)

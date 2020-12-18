@@ -19,6 +19,9 @@ public class GameLogic : MonoBehaviour
     private int curMusicIndex = 0;
     [SerializeField] private AudioClip [] music;
     [SerializeField] private AudioSource musicPlayer;
+    [SerializeField] private AudioClip uiClickSound;
+    [SerializeField] private AudioClip uiHoverSound;
+    [SerializeField] private AudioSource uiAudioSource;
 
     public Player player;
     public EventManager events;
@@ -145,6 +148,26 @@ public class GameLogic : MonoBehaviour
             musicPlayer.clip = newMusic;
             musicPlayer.Play();
         }
+    }
+
+    private void PlayAudio(AudioSource source, AudioClip clip)
+    {
+        if(source.isPlaying)
+        {
+            source.Stop();
+        }
+        source.clip = clip;
+        source.Play();
+    }
+
+    public void PlayHoverAudio()
+    {
+        PlayAudio(uiAudioSource, uiHoverSound);
+    }
+
+    public void PlayClickAudio()
+    {
+        PlayAudio(uiAudioSource, uiClickSound);
     }
 
     #endregion
