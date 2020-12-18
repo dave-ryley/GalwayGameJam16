@@ -16,13 +16,17 @@ MonoBehaviour:
   abilityName: Melting Point
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
   upgradeLevels: 5
+  description: 'Rapidly heat all the ice and frost in the area turning it into burning
+    ground dealing  fire damage to all enemies that come in contact. Ice shards impaled
+    in enemies ignite them for 4 seconds dealing fire damage for each impaled shard.
+    <b>Mana cost: 20 Cooldown: 10 seconds</b>'
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 0
+  - 'Burning ground damage per second: 20, Damage per Ice shard: 3'
+  - 'Burning ground damage per second: 25, Damage per Ice shard: 5'
+  - 'Burning ground damage per second: 30, Damage per Ice shard: 7'
+  - 'Burning ground damage per second: 40, Damage per Ice shard: 10'
+  - 'Burning ground damage per second: 50, Damage per Ice shard: 15'
+  levelRequirement: 20
   unlocksAbilities:
   - BOILING_POINT
   unlockedOnStart: 0

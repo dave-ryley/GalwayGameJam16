@@ -16,17 +16,19 @@ MonoBehaviour:
   abilityName: Fireball
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
   upgradeLevels: 5
+  description: 'Throw a fireball at an enemy dealing fire damage on impact with a
+    20% chance to ignite the enemy for for 5 seconds <b>Mana cost: 30</b>'
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 3
+  - 'Impact damage: 30, Ignite damage: 5 per second'
+  - 'Impact damage: 45, Ignite damage: 7 per second'
+  - 'Impact damage: 65, Ignite damage: 10 per second'
+  - 'Impact damage: 90, Ignite damage: 15 per second'
+  - 'Impact damage: 125, Ignite damage: 30 per second'
+  levelRequirement: 2
   unlocksAbilities:
   - FIREBOLT
   - BURNING_SHACKLE
-  unlockedOnStart: 1
+  unlockedOnStart: 0
   abilityType: 0
   currentUpgradeLevel: 0
-  unlocked: 1
+  unlocked: 0

@@ -16,17 +16,19 @@ MonoBehaviour:
   abilityName: Lightning Bolt
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
   upgradeLevels: 5
+  description: 'Call down lightning onto an enemy dealing lightning damage with a
+    chance to stun the enemy for 1 second <b>Mana cost: 20</b>'
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 3
+  - 'Lightning damage: 20, Stun chance: 20%'
+  - 'Lightning damage: 30, Stun chance: 30%'
+  - 'Lightning damage: 50, Stun chance: 50%'
+  - 'Lightning damage: 75, Stun chance: 75%'
+  - 'Lightning damage: 100, Stun chance: 100%'
+  levelRequirement: 2
   unlocksAbilities:
   - THUNDERBOLT
   - SHOCKING_TOUCH
-  unlockedOnStart: 1
+  unlockedOnStart: 0
   abilityType: 0
-  currentUpgradeLevel: 1
-  unlocked: 1
+  currentUpgradeLevel: 0
+  unlocked: 0

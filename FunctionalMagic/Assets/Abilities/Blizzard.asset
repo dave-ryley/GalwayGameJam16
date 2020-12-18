@@ -15,14 +15,14 @@ MonoBehaviour:
   id: BLIZZARD
   abilityName: Blizzard
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
-  upgradeLevels: 5
+  upgradeLevels: 3
+  description: 'Rapidly rain down ice from the sky impaling each enemy in a large
+    radius with the maximum stacks of Ice shards. <b>Mana cost: 80 Cooldown: 80 seconds</b>'
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 0
+  - 'Radius: 25 meters'
+  - 'Radius: 35 meters'
+  - 'Radius: 50 meters'
+  levelRequirement: 30
   unlocksAbilities:
   - BLIZZARD_NORTH
   unlockedOnStart: 0

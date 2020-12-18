@@ -15,14 +15,14 @@ MonoBehaviour:
   id: BOILING_POINT
   abilityName: Boiling Point
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
-  upgradeLevels: 5
+  upgradeLevels: 3
+  description: Ice shards deal an additional burst of fire damage per shard when
+    you melt them.
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 0
+  - 'Fire damage per shard: 25'
+  - 'Fire damage per shard: 50'
+  - 'Fire damage per shard: 100'
+  levelRequirement: 25
   unlocksAbilities: []
   unlockedOnStart: 0
   abilityType: 1

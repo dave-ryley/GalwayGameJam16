@@ -16,17 +16,20 @@ MonoBehaviour:
   abilityName: Shocking Touch
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
   upgradeLevels: 5
+  description: Touch an enemy within 1 meter of you to blast them backwards dealing
+    lightning damage to them and all enemies they come in contact with. <b>Mana cost
+    30</b>
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 0
+  - 'Lightning damage: 35'
+  - 'Lightning damage: 50'
+  - 'Lightning damage: 75'
+  - 'Lightning damage: 100'
+  - 'Lightning damage: 150'
+  levelRequirement: 8
   unlocksAbilities:
   - THUNDERSTRUCK
   - CHAIN_LIGHTNING
   unlockedOnStart: 0
   abilityType: 0
   currentUpgradeLevel: 0
-  unlocked: 1
+  unlocked: 0

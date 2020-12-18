@@ -16,17 +16,20 @@ MonoBehaviour:
   abilityName: Creeping Frost
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
   upgradeLevels: 5
+  description: 'Icy shards slowly crawl toward a targeted enemy dealing frost damage
+    on impact and freezing the ground it passes for a short duration. Frozen ground
+    reduces enemy movement and attack speed by 15% <b>Mana cost: 25</b>'
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 3
+  - Frost Damage - 35
+  - Frost Damage - 50
+  - Frost Damage - 75
+  - Frost Damage - 100
+  - Frost Damage - 150
+  levelRequirement: 2
   unlocksAbilities:
   - LINGERING_FROST
   - SNOWFALL
-  unlockedOnStart: 1
+  unlockedOnStart: 0
   abilityType: 0
-  currentUpgradeLevel: 1
-  unlocked: 1
+  currentUpgradeLevel: 0
+  unlocked: 0

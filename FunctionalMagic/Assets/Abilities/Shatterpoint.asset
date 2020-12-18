@@ -16,17 +16,19 @@ MonoBehaviour:
   abilityName: Shatterpoint
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
   upgradeLevels: 9
+  description: Killing a frozen enemy causes them to explode in shards of ice dealing
+    a percentage of their maximum life as frost damage to nearby enemies
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 0
+  - 'Life as damage: 1%'
+  - 'Life as damage: 2%'
+  - 'Life as damage: 3%'
+  - 'Life as damage: 4%'
+  - 'Life as damage: 5%'
+  - 'Life as damage:  6%'
+  - 'Life as damage: 7%'
+  - 'Life as damage: 8%'
+  - 'Life as damage: 10%'
+  levelRequirement: 1
   unlocksAbilities: []
   unlockedOnStart: 0
   abilityType: 2

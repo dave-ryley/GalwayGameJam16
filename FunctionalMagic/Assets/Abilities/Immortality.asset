@@ -10,25 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7898463b012e5e642ab2265e5d4e3a4f, type: 3}
-  m_Name: Therapy
+  m_Name: Immortality
   m_EditorClassIdentifier: 
-  id: THERAPY
-  abilityName: Therapy
+  id: IMMORTALITY
+  abilityName: Immortality
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
-  upgradeLevels: 9
+  upgradeLevels: 1
+  description: <i>How do you kill that which has no life?</i>
   descriptionPerUpgradeLevel:
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 0
+  levelRequirement: 9001
   unlocksAbilities: []
-  unlockedOnStart: 0
-  abilityType: 2
+  unlockedOnStart: 1
+  abilityType: 3
   currentUpgradeLevel: 0
   unlocked: 0

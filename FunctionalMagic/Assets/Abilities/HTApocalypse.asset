@@ -15,14 +15,13 @@ MonoBehaviour:
   id: HTAPOCALYPSE
   abilityName: Hail The Apocalypse
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
-  upgradeLevels: 5
+  upgradeLevels: 2
+  description: Meteors leave burning ground in a 5 meter area around the impact zone
+    for 10 seconds
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 0
+  - 'Burning ground damage: 40 per second'
+  - 'Burning ground damage: 60 per second'
+  levelRequirement: 40
   unlocksAbilities: []
   unlockedOnStart: 0
   abilityType: 1

@@ -15,14 +15,15 @@ MonoBehaviour:
   id: THUNDERSTORM
   abilityName: Thunderstorm
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
-  upgradeLevels: 5
+  upgradeLevels: 3
+  description: 'A Lightning bolt strikes enemies in a 50 meter radius once a second
+    for 10 seconds. Lightning bolts cast from Thunderstorm deal increased damage
+    <b>Mana cost: 125 Cool-down: 125 seconds</b>'
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 0
+  - 'Increased Lightning bolt damage: 15%'
+  - 'Increased Lightning bolt damage: 35%'
+  - 'Increased Lightning bolt damage: 75%'
+  levelRequirement: 30
   unlocksAbilities:
   - TEMPEST
   unlockedOnStart: 0

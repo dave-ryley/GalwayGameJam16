@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class AbilityTooltip : MonoBehaviour
 {
-    private const string descAddon = "/nAlso increases movement speed by {0}%.";
+    private const string descAddon = "\nAlso increases movement speed by {0}%.";
     private const string warning = "Warning: Text Missing!";
     [SerializeField] private TextMeshProUGUI abilityName;
     [SerializeField] private Image abilityIcon;

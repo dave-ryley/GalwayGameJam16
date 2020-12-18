@@ -16,13 +16,15 @@ MonoBehaviour:
   abilityName: Chain Lightning
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
   upgradeLevels: 5
+  description: 'Fire a Lightning bolt that jumps between enemies in a 10 meter radius
+    dealing 30% less damage each time it jumps <b>Mana cost: 40</b>'
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 0
+  - Jumps between 3 enemies, each enemy can only be hit once
+  - Jumps between 5 enemies, each enemy can only be hit once
+  - Jumps between 7 enemies, each enemy can only be hit once
+  - Jumps between 7 enemies, can jump to each enemy a second time
+  - Jumps between 10 enemies, can jump to each enemy multiple times
+  levelRequirement: 15
   unlocksAbilities:
   - THUNDER_COIL
   - MJOLNIR

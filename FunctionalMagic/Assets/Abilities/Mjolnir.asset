@@ -16,16 +16,18 @@ MonoBehaviour:
   abilityName: Mjolnir
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
   upgradeLevels: 5
+  description: 'Teleport to an enemy in a flash of lightning sending out a shock
+    wave on landing that deals lightning damage to all enemies in a 8 meter radius
+    <b>Mana cost: 60</b>'
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 0
+  - 'Lightning damage: 75'
+  - 'Lightning damage: 100'
+  - 'Lightning damage: 130'
+  - 'Lightning damage: 160'
+  - 'Lightning damage: 200'
+  levelRequirement: 20
   unlocksAbilities:
   - THUNDERGOD
-  - 
   unlockedOnStart: 0
   abilityType: 0
   currentUpgradeLevel: 0

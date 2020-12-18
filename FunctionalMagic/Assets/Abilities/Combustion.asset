@@ -16,13 +16,15 @@ MonoBehaviour:
   abilityName: Combustion
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
   upgradeLevels: 5
+  description: 'Burn an enemy for second for 5 seconds, applying this skill again
+    refreshes the duration <b>Mana cost: 50</b>'
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 0
+  - 'Fire damage per second: 45'
+  - 'Fire damage per second: 60'
+  - 'Fire damage per second: 80'
+  - 'Fire damage per second: 100'
+  - 'Fire damage per second: 150'
+  levelRequirement: 15
   unlocksAbilities:
   - VIOLENT_COMBUSTION
   - ARMAGEDDON

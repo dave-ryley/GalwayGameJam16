@@ -15,14 +15,15 @@ MonoBehaviour:
   id: ARMAGEDDON
   abilityName: Armageddon
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
-  upgradeLevels: 5
+  upgradeLevels: 3
+  description: 'Summon 2 fiery meteors for every enemy in a 50 meter radius. Meteors
+    fall every 0.5 seconds and deal fire damage to all enemies within 5 meters of
+    the impact zone <b>Mana cost: 100 Cooldown: 10 seconds per enemy in area of effect</b>'
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 0
+  - 'Impact damage: 90'
+  - 'Impact damage: 150'
+  - 'Impact damage: 300'
+  levelRequirement: 30
   unlocksAbilities:
   - HTAPOCALYPSE
   unlockedOnStart: 0

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7898463b012e5e642ab2265e5d4e3a4f, type: 3}
+  m_Name: HighVoltage
+  m_EditorClassIdentifier: 
+  id: HIGH_VOLTAGE
+  abilityName: High Voltage
+  image: {fileID: 0}
+  upgradeLevels: 9
+  description: (Danger! Danger!) All Lightning damage has additional chance to deal
+    double or triple damage
+  descriptionPerUpgradeLevel:
+  - 'Additional chance to deal double damage: 10%'
+  - 'Additional chance to deal double damage: 10%, Additional chance to deal triple
+    damage: 3%'
+  - 'Additional chance to deal double damage: 15% , Additional chance to deal triple
+    damage: 3%'
+  - 'Additional chance to deal double damage: 15%, Additional chance to deal triple
+    damage: 5%'
+  - 'Additional chance to deal double damage: 20%, Additional chance to deal triple
+    damage: 5%'
+  - 'Additional chance to deal double damage: 20%, Additional chance to deal triple
+    damage: 7%'
+  - 'Additional chance to deal double damage: 25%, Additional chance to deal triple
+    damage: 7%'
+  - 'Additional chance to deal double damage: 25%, Additional chance to deal triple
+    damage: 10%'
+  - 'Additional chance to deal double damage: 40%, Additional chance to deal triple
+    damage: 15%'
+  levelRequirement: 1
+  unlocksAbilities: []
+  unlockedOnStart: 0
+  abilityType: 2
+  currentUpgradeLevel: 0
+  unlocked: 0

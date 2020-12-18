@@ -15,18 +15,20 @@ MonoBehaviour:
   id: ICE_SHARD
   abilityName: Ice Shard
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
-  upgradeLevels: 0
+  upgradeLevels: 5
+  description: 'Throw a shard of ice at an enemy dealing a large amount of frost
+    damage, ice shards stay impaled in the enemy for 5 seconds. <b>Mana cost: 40</b>'
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 0
+  - 'Frost Damage: 125'
+  - 'Frost Damage: 140'
+  - 'Frost Damage: 175'
+  - 'Frost Damage: 225'
+  - 'Frost Damage: 300'
+  levelRequirement: 15
   unlocksAbilities:
   - ICE_SPEAR
   - BLIZZARD
   unlockedOnStart: 0
   abilityType: 0
   currentUpgradeLevel: 0
-  unlocked: 1
+  unlocked: 0

@@ -16,13 +16,16 @@ MonoBehaviour:
   abilityName: Burning Shackle
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
   upgradeLevels: 5
+  description: 'Connect yourself to a targeted enemy with a chain of fire dealing
+    fire damage each second to the connected enemy and all other enemies that come
+    in contact with the chain <b>Mana cost: 6 per second</b>'
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 0
+  - 'Fire damage per second: 10'
+  - 'Fire damage per second: 15'
+  - 'Fire damage per second: 20'
+  - 'Fire damage per second: 25'
+  - 'Fire damage per second: 40'
+  levelRequirement: 8
   unlocksAbilities:
   - SEARING_BOND
   - COMBUSTION

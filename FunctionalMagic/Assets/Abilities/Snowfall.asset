@@ -16,17 +16,21 @@ MonoBehaviour:
   abilityName: Snowfall
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
   upgradeLevels: 5
+  description: 'Make it snow in a large area around a targeted enemy. Enemies in
+    snowy areas have 15% reduced speed and have a chance to be frozen for 2 seconds
+    when hit with frost damage. Frozen enemies cannot move or attack. <b>Mana cost:
+    35</b>'
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 0
+  - 'Chance to freeze: 10%'
+  - 'Chance to freeze: 15%'
+  - 'Chance to freeze: 25%'
+  - 'Chance to freeze: 35%'
+  - 'Chance to freeze: 50'
+  levelRequirement: 8
   unlocksAbilities:
   - SNOWSTORM
   - ICE_SHARD
   unlockedOnStart: 0
   abilityType: 0
-  currentUpgradeLevel: 1
-  unlocked: 1
+  currentUpgradeLevel: 0
+  unlocked: 0

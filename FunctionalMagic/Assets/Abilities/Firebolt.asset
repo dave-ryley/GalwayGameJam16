@@ -15,14 +15,13 @@ MonoBehaviour:
   id: FIREBOLT
   abilityName: Firebolt
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
-  upgradeLevels: 5
+  upgradeLevels: 3
+  description: Increase fireball cast speed
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 0
+  - Cast speed +25%
+  - Cast speed +50%
+  - Cast speed +75%
+  levelRequirement: 5
   unlocksAbilities: []
   unlockedOnStart: 0
   abilityType: 1

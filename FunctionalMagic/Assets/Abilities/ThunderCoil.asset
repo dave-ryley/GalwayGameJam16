@@ -15,14 +15,13 @@ MonoBehaviour:
   id: THUNDER_COIL
   abilityName: Thunder Coil
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
-  upgradeLevels: 5
+  upgradeLevels: 3
+  description: Reduces chain lightnings damage penalty when jumping to a new target
   descriptionPerUpgradeLevel:
-  - 
-  - 
-  - 
-  - 
-  - 
-  levelRequirement: 0
+  - Chain lightning deals 20% less damage each time it jumps
+  - Chain lightning deals 10% less damage each time it jumps
+  - Chain lightning has no damage penalty when it jumps
+  levelRequirement: 16
   unlocksAbilities: []
   unlockedOnStart: 0
   abilityType: 1
