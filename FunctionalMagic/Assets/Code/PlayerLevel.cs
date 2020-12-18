@@ -113,6 +113,7 @@ public class PlayerLevel : MonoBehaviour
                     unlockedAbility.unlocked = true;
                 }
             }
+            _player.PlayAbilityUnlockedAudio();
             _player.AddAbilitySpeed();
             _player.events.DispatchEvent("onPlayerAbilityAdded");
         }

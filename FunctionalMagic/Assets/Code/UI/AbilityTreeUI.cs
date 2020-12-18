@@ -8,6 +8,7 @@ public class AbilityTreeUI : MonoBehaviour
     [SerializeField] private AbilityTooltip _tooltip;
     private List<AbilityTreeButton> _buttons;
     private Dictionary<string, AbilityTreeButton> _buttonsById;
+    private Ability lastHoveredAbility;
 
     private AbilityTreeButton AddButton(AbilityTree.AbilityTreeNode node)
     {
@@ -217,15 +218,23 @@ public class AbilityTreeUI : MonoBehaviour
         {
             button.Populate();
         }
+        if(lastHoveredAbility != null)
+        {
+            _buttonsById.TryGetValue(lastHoveredAbility.id, out AbilityTreeButton button);
+            Color color = button.GetActualColor();
+            _tooltip.PopulateTooltip(lastHoveredAbility, color);
+        }
     }
 
     public void OnEnterAbilityButton(Ability ability, Color color)
     {
+        lastHoveredAbility = ability;
         _tooltip.PopulateTooltip(ability, color);
     }
 
     public void OnExitAbilityButton()
     {
+        lastHoveredAbility = null;
         _tooltip.HideTooltip();
     }
 }

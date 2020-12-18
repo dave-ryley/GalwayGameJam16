@@ -57,7 +57,7 @@ public class AbilityTooltip : MonoBehaviour
             }
         }
         int level = GameLogic.GetInstance().GetPlayer().level.level;
-        abilityLevelRequirement.gameObject.SetActive(ability.levelRequirement <= level);
+        abilityLevelRequirement.gameObject.SetActive(ability.levelRequirement > level);
         if(ability.levelRequirement > level)
         {
             abilityLevelRequirement.text = "Level Requirement: " + ability.levelRequirement;
