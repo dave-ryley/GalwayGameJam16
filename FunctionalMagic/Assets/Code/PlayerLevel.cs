@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerLevel : MonoBehaviour
 {
-    private const float XP_SCALE = 1.5f;
+    [SerializeField] private float XP_SCALE = 1.25f;
     private Player _player;
 
     public AbilityTree abilityTree;

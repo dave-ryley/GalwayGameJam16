@@ -24,10 +24,13 @@ public class AbilityTreeUI : MonoBehaviour
                 Transform linkFrom  = button.transform.Find("LinkFrom");
                 linkFrom.gameObject.SetActive(false);
             }
+            Transform linkToGroup  = button.transform.Find("LinkToGroup");
             if(node.unlocks.Count == 0)
             {
-                Transform linkToGroup  = button.transform.Find("LinkToGroup");
                 linkToGroup.gameObject.SetActive(false);
+            }
+            else
+            {
                 RectTransform joiner = linkToGroup.Find("Joiner") as RectTransform;
                 joiner.sizeDelta = new Vector2(((node.unlocks.Count - 1) * 200f) + 4f, 4f);
             }
@@ -103,6 +106,8 @@ public class AbilityTreeUI : MonoBehaviour
         float minXOffset = 0f;
         float maxXOffset = 0f;
 
+        HashSet<AbilityTree.AbilityTreeNode> alreadyAdjusted = new HashSet<AbilityTree.AbilityTreeNode>();
+
         // Adjust positions moving up from widest
         for(int i = widestDepth; i < treeDepth; i++)
         {
@@ -124,6 +129,7 @@ public class AbilityTreeUI : MonoBehaviour
                         RectTransform childTransform = childButton.transform as RectTransform;
                         float xpos = (index * minXDistanceBetweenButtons) - ((node.unlocks.Count - 1) * minXDistanceBetweenButtons/2) + centerX;
                         childTransform.anchoredPosition = new Vector2(xpos, childYPos);
+                        alreadyAdjusted.Add(child);
                     }
                 }
             }
@@ -131,7 +137,71 @@ public class AbilityTreeUI : MonoBehaviour
         // Adjust positions moving down from widest
         for(int i = widestDepth - 1; i >= 0; i--)
         {
+            List<AbilityTree.AbilityTreeNode> treeNodes = depthLevels[i];
+            float childYPos = initialYOffset + minYDistanceBetweenButtons * (i);
+            foreach(AbilityTree.AbilityTreeNode node in treeNodes)
+            {
+                _buttonsById.TryGetValue(node.ability.id, out AbilityTreeButton parentButton);
+                RectTransform parentTransform = parentButton.transform as RectTransform;
+                minXOffset = Mathf.Min(minXOffset, parentTransform.anchoredPosition.x);
+                maxXOffset = Mathf.Max(maxXOffset, parentTransform.anchoredPosition.x);
+                if(node.unlocks.Count > 0) // Has children to adjust by
+                {
+                    // First adjust child siblings that haven't already been adjusted
+                    for(int c = 0; c < node.unlocks.Count; c++)
+                    {
+                        AbilityTree.AbilityTreeNode childNode = node.unlocks[c];
+                        if(!alreadyAdjusted.Contains(childNode))
+                        {
+                            _buttonsById.TryGetValue(childNode.ability.id, out AbilityTreeButton childButton);
+                            RectTransform childTransform = childButton.transform as RectTransform;
+                            // Check Left
+                            if(c > 0)
+                            {
+                                AbilityTree.AbilityTreeNode siblingNode = node.unlocks[c - 1];
+                                _buttonsById.TryGetValue(siblingNode.ability.id, out AbilityTreeButton siblingButton);
+                                RectTransform siblingTransform = siblingButton.transform as RectTransform;
+                                if(childTransform.anchoredPosition.x - siblingTransform.anchoredPosition.x < minXDistanceBetweenButtons)
+                                {
+                                    float newX = siblingTransform.anchoredPosition.x + minXDistanceBetweenButtons;
+                                    childTransform.anchoredPosition = new Vector2(newX, childTransform.anchoredPosition.y);
+                                    minXOffset = Mathf.Min(minXOffset, newX);
+                                    maxXOffset = Mathf.Max(maxXOffset, newX);
+                                }
+                            }
+                            // Check Right
+                            if(c < node.unlocks.Count - 1)
+                            {
+                                AbilityTree.AbilityTreeNode siblingNode = node.unlocks[c + 1];
+                                _buttonsById.TryGetValue(siblingNode.ability.id, out AbilityTreeButton siblingButton);
+                                RectTransform siblingTransform = siblingButton.transform as RectTransform;
+                                if(siblingTransform.anchoredPosition.x - childTransform.anchoredPosition.x < minXDistanceBetweenButtons)
+                                {
+                                    float newX = siblingTransform.anchoredPosition.x - minXDistanceBetweenButtons;
+                                    childTransform.anchoredPosition = new Vector2(newX, childTransform.anchoredPosition.y);
+                                    minXOffset = Mathf.Min(minXOffset, newX);
+                                    maxXOffset = Mathf.Max(maxXOffset, newX);
+                                }
+                            }
+                        }
+                    }
 
+                    float centerX = parentTransform.anchoredPosition.x;
+                    AbilityTree.AbilityTreeNode c1 = node.unlocks[0];
+                    AbilityTree.AbilityTreeNode c2 = node.unlocks[node.unlocks.Count - 1];
+                    _buttonsById.TryGetValue(c1.ability.id, out AbilityTreeButton c1Button);
+                    _buttonsById.TryGetValue(c2.ability.id, out AbilityTreeButton c2Button);
+                    RectTransform c1Transform = c1Button.transform as RectTransform;
+                    RectTransform c2Transform = c2Button.transform as RectTransform;
+                    float width = Mathf.Abs((c1Transform.anchoredPosition.x - c2Transform.anchoredPosition.x));
+                    float xpos = (c1Transform.anchoredPosition.x + c2Transform.anchoredPosition.x)/2;
+                    parentTransform.anchoredPosition = new Vector2(xpos, childYPos);
+                    alreadyAdjusted.Add(node);
+                    Transform linkToGroup  = parentTransform.Find("LinkToGroup");
+                    RectTransform joiner = linkToGroup.Find("Joiner") as RectTransform;
+                    joiner.sizeDelta = new Vector2(width + 4f, 4f);
+                }
+            }
         }
 
         RectTransform thisTransform = transform as RectTransform;

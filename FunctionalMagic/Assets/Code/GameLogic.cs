@@ -15,6 +15,9 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private ParcelManager parcelManager;
     [SerializeField] private Ability[] abilities;
 
+    [SerializeField] private AudioClip [] sfx;
+    [SerializeField] private Dictionary<string, AudioClip> sfxDictionary;
+
     public Player player;
     public EventManager events;
 

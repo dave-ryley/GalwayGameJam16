@@ -49,7 +49,8 @@ public class AbilityTreeButton : MonoBehaviour
         currentLevelText.text = ability.currentUpgradeLevel.ToString() + "/" + ability.upgradeLevels.ToString();
         ColorBlock colors = new ColorBlock();
         colors.colorMultiplier = 1;
-        if(ability.unlocked)
+        PlayerLevel playerLevel = GameLogic.GetInstance().GetPlayer().level;
+        if(ability.unlocked && ability.levelRequirement <= playerLevel.level)
         {
             switch(ability.abilityType)
             {

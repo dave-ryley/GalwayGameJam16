@@ -9,11 +9,7 @@ public class DialogBox : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textField;
     [SerializeField] private GameObject speechBubble;
     [SerializeField] private TextMeshProUGUI nameField;
-
-    void Start()
-    {
-        speechBubble.SetActive(false);
-    }
+    private AudioSource audioSource;
 
     void Update()
     {
@@ -21,7 +17,14 @@ public class DialogBox : MonoBehaviour
         {
             hideTime = 0f;
             speechBubble.SetActive(false);
+            audioSource.enabled = false;
         }
+    }
+
+    public void Setup(AudioSource audioSource)
+    {
+        speechBubble.SetActive(false);
+        this.audioSource = audioSource;
     }
 
     public void SetName(string text)
@@ -29,10 +32,18 @@ public class DialogBox : MonoBehaviour
         nameField.text = text;
     }
 
-    public void Say(string text, float duration = 1f)
+    public void Say(string text, float duration, AudioClip clip)
     {
         speechBubble.SetActive(true);
         textField.text = text;
         hideTime = duration + Time.time;
+        if(audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+        audioSource.clip = clip;
+        audioSource.loop = true;
+        audioSource.enabled = true;
+        audioSource.Play();
     }
 }

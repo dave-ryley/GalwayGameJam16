@@ -11,6 +11,7 @@ public class Ability : ScriptableObject
     public string abilityName;
     public Sprite image;
     public int upgradeLevels;
+    public string description;
     public string [] descriptionPerUpgradeLevel;
     public int levelRequirement;
     public string [] unlocksAbilities;

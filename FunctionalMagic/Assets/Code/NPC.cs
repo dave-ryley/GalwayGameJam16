@@ -7,14 +7,18 @@ public class NPC : MonoBehaviour
 {
     public const float squareDistanceRequired = 5f * 5f;
     public bool playerInRange = false;
-    [SerializeField] private DialogBox dialogBox;
+    [SerializeField] private DialogBox _dialogBox;
+    [SerializeField] private AudioSource _audioSource;
 
     public string characterName;
     public bool includedInDeliveryList = true;
 
+    public AudioClip [] simSpeak;
+
     void Start()
     {
-        dialogBox.SetName(characterName);
+        _dialogBox.Setup(_audioSource);
+        _dialogBox.SetName(characterName);
     }
 
     public void UpdateNPC(Player player)
@@ -29,22 +33,29 @@ public class NPC : MonoBehaviour
             {
                 if(GameLogic.GetInstance().ExpectingParcel(this, out Parcel expectedParcel))
                 {
-                    dialogBox.Say(expectedParcel.waitingForDialog, 3f);
+                    Say(expectedParcel.waitingForDialog, 3f);
                 }
                 else
                 {
-                    dialogBox.Say("Hello Friend!", 2f);
+                    Say("Hello Friend!", 2f);
                 }
             }
             else
             {
-                dialogBox.Say("Goodbye!");
+                Say("Goodbye!");
             }
         }
     }
 
     internal void ReceiveParcel(Parcel parcel)
     {
-        dialogBox.Say(parcel.recievedDialog, 3f);
+        Say(parcel.recievedDialog, 3f);
+    }
+
+    public void Say(string dialog, float time = 1f)
+    {
+        int randomAudioIndex = UnityEngine.Random.Range(0, simSpeak.Length);
+        AudioClip clip = simSpeak[randomAudioIndex];
+        _dialogBox.Say(dialog, time, clip);
     }
 }
