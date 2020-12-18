@@ -35,7 +35,7 @@ public class AbilityTooltip : MonoBehaviour
         abilityThisLevelDescription.gameObject.SetActive(ability.currentUpgradeLevel > 0);
         if(ability.currentUpgradeLevel > 0)
         {
-            if(ability.descriptionPerUpgradeLevel.Length <= ability.currentUpgradeLevel)
+            if(ability.descriptionPerUpgradeLevel.Length >= ability.currentUpgradeLevel)
             {
                 abilityThisLevelDescription.text = "<b>This Level:</b> " + ability.descriptionPerUpgradeLevel[ability.currentUpgradeLevel - 1] + string.Format(descAddon, ability.currentUpgradeLevel);
             }
@@ -47,9 +47,9 @@ public class AbilityTooltip : MonoBehaviour
         abilityNextLevelDescription.gameObject.SetActive(ability.currentUpgradeLevel < ability.upgradeLevels);
         if(ability.currentUpgradeLevel < ability.upgradeLevels)
         {
-            if(ability.descriptionPerUpgradeLevel.Length <= ability.currentUpgradeLevel + 1)
+            if(ability.descriptionPerUpgradeLevel.Length >= ability.currentUpgradeLevel + 1)
             {
-                abilityNextLevelDescription.text = "<b>Next Level:</b> " + ability.descriptionPerUpgradeLevel[ability.currentUpgradeLevel + 1] + string.Format(descAddon, ability.currentUpgradeLevel + 1);
+                abilityNextLevelDescription.text = "<b>Next Level:</b> " + ability.descriptionPerUpgradeLevel[ability.currentUpgradeLevel] + string.Format(descAddon, ability.currentUpgradeLevel + 1);
             }
             else
             {
