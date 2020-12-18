@@ -15,8 +15,10 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private ParcelManager parcelManager;
     [SerializeField] private Ability[] abilities;
 
-    [SerializeField] private AudioClip [] sfx;
-    [SerializeField] private Dictionary<string, AudioClip> sfxDictionary;
+    private int changeMusicEveryXLevels = 5;
+    private int curMusicIndex = 0;
+    [SerializeField] private AudioClip [] music;
+    [SerializeField] private AudioSource musicPlayer;
 
     public Player player;
     public EventManager events;
@@ -48,6 +50,10 @@ public class GameLogic : MonoBehaviour
             }
         }
         player.BuildAbilityTree(abilities);
+        player.events.AddEventListener("onPlayerLevelUp", OnPlayerLevelUp);
+        AudioClip newMusic = music[0];
+        musicPlayer.clip = newMusic;
+        musicPlayer.Play();
     }
 
     void Update()
@@ -126,6 +132,19 @@ public class GameLogic : MonoBehaviour
     public Player GetPlayer()
     {
         return player;
+    }
+
+    private void OnPlayerLevelUp()
+    {
+        int newMusicIndex = player.level.level/changeMusicEveryXLevels;
+        if(newMusicIndex != curMusicIndex && newMusicIndex < music.Length)
+        {
+            curMusicIndex = newMusicIndex;
+            AudioClip newMusic = music[newMusicIndex];
+            musicPlayer.Stop();
+            musicPlayer.clip = newMusic;
+            musicPlayer.Play();
+        }
     }
 
     #endregion

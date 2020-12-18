@@ -28,7 +28,7 @@ public class PlayerLevel : MonoBehaviour
         abilityTree = new AbilityTree(abilities);
     }
 
-    public void AddXP(int amount)
+    public void AddXP(int amount, bool playAudio = true)
     {
         xp += amount;
 
@@ -36,7 +36,11 @@ public class PlayerLevel : MonoBehaviour
         {
             int amountOver = xp - xpRequired;
             LevelUp();
-            AddXP(amountOver);
+            AddXP(amountOver, false);
+        }
+        else if(playAudio)
+        {
+            _player.PlayXPAudio();
         }
     }
 
@@ -48,6 +52,7 @@ public class PlayerLevel : MonoBehaviour
         unusedAttributes++;
         unusedPerks++;
         _player.events.DispatchEvent("onPlayerLevelUp");
+        _player.PlayLevelUpAudio();
     }
 
     public void AddStrengthPoint()

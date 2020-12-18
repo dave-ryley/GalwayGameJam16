@@ -11,6 +11,19 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerNotification alert;
     [SerializeField] private float _parcelGrabDistanceSq = 5f;
     [SerializeField] private float _parcelHoldDistance = 5f;
+
+    [SerializeField] private AudioClip liftParcel;
+    [SerializeField] private AudioClip holdParcel;
+    [SerializeField] private AudioClip dropParcel;
+    [SerializeField] private AudioClip [] footsteps;
+    [SerializeField] private AudioClip addXPSFX;
+    [SerializeField] private AudioClip levelUpSoundSFX;
+    [SerializeField] private AudioSource notificationAudioSource;
+    private bool useFootstep1 = true;
+    [SerializeField] private AudioSource footstepsAudioSource1;
+    [SerializeField] private AudioSource footstepsAudioSource2;
+    [SerializeField] private AudioSource holdPackageAudioSource;
+
     private List<Ability> _acquiredAbilities;
     private Vector3 _parcelOffset;
     public Parcel heldParcel;
@@ -34,6 +47,25 @@ public class Player : MonoBehaviour
         {
             heldParcel.transform.position = player.transform.position + _parcelOffset;
         }
+    }
+
+    private void PlayAudio(AudioSource source, AudioClip clip, bool loop = false)
+    {
+        if(source.isPlaying)
+        {
+            source.Stop();
+        }
+        source.clip = clip;
+        source.loop = loop;
+        source.Play();
+    }
+
+    private void PlayFootstep()
+    {
+        int randomFootstep = UnityEngine.Random.Range(0, footsteps.Length);
+        AudioSource source = (useFootstep1) ? footstepsAudioSource1 : footstepsAudioSource2;
+        useFootstep1 = !useFootstep1;
+        PlayAudio(source, footsteps[randomFootstep]);
     }
 
     internal void BuildAbilityTree(Ability[] abilities)
@@ -61,6 +93,7 @@ public class Player : MonoBehaviour
                 heldParcel = highlightedParcel;
                 highlightedParcel = null;
                 heldParcel.SetHeld(true);
+                PlayAudio(holdPackageAudioSource, liftParcel, false);
                 events.DispatchEvent("onPlayerGrabParcel");
             }
         }
@@ -70,6 +103,7 @@ public class Player : MonoBehaviour
             {
                 heldParcel.SetHeld(false);
                 heldParcel = null;
+                PlayAudio(holdPackageAudioSource, dropParcel, false);
                 events.DispatchEvent("onPlayerDropParcel");
             }
         }
@@ -83,6 +117,16 @@ public class Player : MonoBehaviour
     public bool IsHoldingParcel()
     {
         return heldParcel != null;
+    }
+
+    public void PlayXPAudio()
+    {
+        PlayAudio(notificationAudioSource, addXPSFX, false);
+    }
+
+    public void PlayLevelUpAudio()
+    {
+        PlayAudio(notificationAudioSource, levelUpSoundSFX, false);
     }
 
     public void AddXP(int amount)
