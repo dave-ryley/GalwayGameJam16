@@ -5,6 +5,7 @@ using UnityEngine;
 public class AbilityTreeUI : MonoBehaviour
 {
     [SerializeField] private GameObject _buttonPrototype;
+    [SerializeField] private AbilityTooltip _tooltip;
     private List<AbilityTreeButton> _buttons;
     private Dictionary<string, AbilityTreeButton> _buttonsById;
 
@@ -15,7 +16,7 @@ public class AbilityTreeUI : MonoBehaviour
             GameObject buttonGO = GameObject.Instantiate(_buttonPrototype, transform);
             buttonGO.SetActive(true);
             AbilityTreeButton button = buttonGO.GetComponent<AbilityTreeButton>();
-            button.ability = node.ability;
+            button.Setup(this, node.ability);
             _buttonsById.Add(node.ability.id, button);
             _buttons.Add(button);
 
@@ -216,5 +217,15 @@ public class AbilityTreeUI : MonoBehaviour
         {
             button.Populate();
         }
+    }
+
+    public void OnEnterAbilityButton(Ability ability, Color color)
+    {
+        _tooltip.PopulateTooltip(ability, color);
+    }
+
+    public void OnExitAbilityButton()
+    {
+        _tooltip.HideTooltip();
     }
 }

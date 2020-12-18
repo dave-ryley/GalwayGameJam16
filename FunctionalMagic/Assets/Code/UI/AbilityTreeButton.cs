@@ -6,8 +6,9 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 // TODO: Add tooltip
-public class AbilityTreeButton : MonoBehaviour
+public class AbilityTreeButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    private AbilityTreeUI parentUI;
     public Ability ability;
     public TextMeshProUGUI currentLevelText;
     public Image image;
@@ -43,10 +44,39 @@ public class AbilityTreeButton : MonoBehaviour
         ExecuteEvents.Execute(gameObject, pointerEventData, ExecuteEvents.deselectHandler);
     }
 
-    public void Populate()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        image.sprite = ability.image;
-        currentLevelText.text = ability.currentUpgradeLevel.ToString() + "/" + ability.upgradeLevels.ToString();
+        parentUI.OnEnterAbilityButton(ability, GetActualColor());
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        parentUI.OnExitAbilityButton();
+    }
+
+    public void Setup(AbilityTreeUI parentUI, Ability ability)
+    {
+        this.ability = ability;
+        this.parentUI = parentUI;
+    }
+
+    public Color GetActualColor()
+    {
+        switch(ability.abilityType)
+            {
+            case Ability.AbilityType.Ability:
+                return normalColorAbility;
+            case Ability.AbilityType.Upgrade:
+                return normalColorUpgrade;
+            case Ability.AbilityType.Unique:
+                return normalColorUnique;
+            default:
+                return normalColorPassive;
+            }
+    }
+
+    public ColorBlock GetColorBlock()
+    {
         ColorBlock colors = new ColorBlock();
         colors.colorMultiplier = 1;
         PlayerLevel playerLevel = GameLogic.GetInstance().GetPlayer().level;
@@ -82,6 +112,14 @@ public class AbilityTreeButton : MonoBehaviour
             colors.highlightedColor = highlightedColorDisabled;
             colors.pressedColor = pressedColorDisabled;
         }
+        return colors;
+    }
+
+    public void Populate()
+    {
+        image.sprite = ability.image;
+        currentLevelText.text = ability.currentUpgradeLevel.ToString() + "/" + ability.upgradeLevels.ToString();
+        ColorBlock colors = GetColorBlock();
         colors.selectedColor = colors.highlightedColor;
         button.colors = colors;
         currentLevelText.color = button.colors.normalColor;
