@@ -94,7 +94,6 @@ public class PlayerLevel : MonoBehaviour
 
     public void AttemptAquireAbility(Ability ability)
     {
-        Debug.Log("Attempt to Aquire Ability" + ability.name);
         if(unusedPerks > 0
             && ability.unlocked
             && ability.currentUpgradeLevel < ability.upgradeLevels
@@ -109,6 +108,7 @@ public class PlayerLevel : MonoBehaviour
                     unlockedAbility.unlocked = true;
                 }
             }
+            _player.AddAbilitySpeed();
             _player.events.DispatchEvent("onPlayerAbilityAdded");
         }
     }

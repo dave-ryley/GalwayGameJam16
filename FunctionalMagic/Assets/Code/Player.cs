@@ -19,11 +19,13 @@ public class Player : MonoBehaviour
     public EventManager events;
     public PlayerLevel level;
     public float speed = 1f;
+    private float speedIncrement = 0.01f;
 
     void Awake()
     {
         events = GetComponent<EventManager>();
         _acquiredAbilities = new List<Ability>();
+        speedIncrement = 0.01f * speed;
     }
 
     void Update()
@@ -122,5 +124,10 @@ public class Player : MonoBehaviour
             highlightedParcel = null;
             events.DispatchEvent("onPlayerClearParcelHighlight");
         }
+    }
+
+    internal void AddAbilitySpeed()
+    {
+        speed += speedIncrement;
     }
 }
