@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
     private Hair hair;
     private Color skinColor;
     private Color clothingColor;
+    public bool allowedToLevitate = false;
+
 
     private bool running = false;
     private bool holdingParcel = false;
@@ -195,6 +197,7 @@ public class Player : MonoBehaviour
 
     public void HighlightNearbyParcel(List<Parcel> activeParcels)
     {
+        if(!allowedToLevitate) return;
         Parcel nearestParcel = null;
         float closestDistanceSq = float.MaxValue;
         foreach(Parcel parcel in activeParcels)

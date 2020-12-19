@@ -25,7 +25,7 @@ public class GameLogic : MonoBehaviour
 
     private int changeMusicEveryXLevels = 5;
     private int curMusicIndex = 0;
-    private int npcsInRange = 0;
+    public int npcsInRange = 0;
     [SerializeField] private AudioClip [] music;
     [SerializeField] private AudioSource musicPlayer;
     [SerializeField] private AudioClip uiClickSound;
@@ -46,6 +46,7 @@ public class GameLogic : MonoBehaviour
 
     internal void ExitRangeOfNPC()
     {
+        Debug.Log("ExitRange");
         npcsInRange--;
         if(npcsInRange == 0)
         {
@@ -87,6 +88,7 @@ public class GameLogic : MonoBehaviour
 
     void Update()
     {
+        if(curGameStage != GameStage.MainGame) return;
         _curNpcIndex++;
         if(_curNpcIndex > _npcs.Count)
         {
@@ -200,6 +202,23 @@ public class GameLogic : MonoBehaviour
     {
         characterCreaterCam.Priority = 0;
         curGameStage = GameStage.CallOver;
+    }
+
+    public void ArrivedAtPostman()
+    {
+        EnterRangeOfNPC();
+        PlayerInput input = player.GetComponent<PlayerInput>();
+        input.enabled = false;
+        curGameStage = GameStage.Tutorial;
+    }
+
+    public void FinishPostmanConversation()
+    {
+        ExitRangeOfNPC();
+        PlayerInput input = player.GetComponent<PlayerInput>();
+        input.enabled = true;
+        player.AddXP(110);
+        curGameStage = GameStage.MainGame;
     }
 
     #endregion
