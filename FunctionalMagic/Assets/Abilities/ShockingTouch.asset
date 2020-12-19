@@ -29,7 +29,9 @@ MonoBehaviour:
   unlocksAbilities:
   - THUNDERSTRUCK
   - CHAIN_LIGHTNING
+  - MJOLNIR
+  - HIGH_VOLTAGE
   unlockedOnStart: 0
   abilityType: 0
-  currentUpgradeLevel: 0
-  unlocked: 0
+  currentUpgradeLevel: 2
+  unlocked: 1

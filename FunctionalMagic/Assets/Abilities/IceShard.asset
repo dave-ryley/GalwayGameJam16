@@ -27,7 +27,8 @@ MonoBehaviour:
   levelRequirement: 15
   unlocksAbilities:
   - ICE_SPEAR
-  - BLIZZARD
+  - MELTING_POINT
+  - SHATTERPOINT
   unlockedOnStart: 0
   abilityType: 0
   currentUpgradeLevel: 0

@@ -27,8 +27,7 @@ MonoBehaviour:
   levelRequirement: 15
   unlocksAbilities:
   - THUNDER_COIL
-  - MJOLNIR
   unlockedOnStart: 0
   abilityType: 0
   currentUpgradeLevel: 0
-  unlocked: 0
+  unlocked: 1

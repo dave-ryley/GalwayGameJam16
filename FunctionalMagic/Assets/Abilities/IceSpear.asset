@@ -24,7 +24,7 @@ MonoBehaviour:
   - 'Additional damage per shard: 25, maximum shards: 5'
   levelRequirement: 16
   unlocksAbilities:
-  - MELTING_POINT
+  - BLIZZARD
   unlockedOnStart: 0
   abilityType: 1
   currentUpgradeLevel: 0

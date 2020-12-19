@@ -28,8 +28,9 @@ MonoBehaviour:
   - 'Chance to create burning ground: 15% Increase all fire damage by 14%'
   - 'Chance to create burning ground: 15% Increase all fire damage by 17%'
   - 'Chance to create burning ground: 20% Increase all fire damage by 20%'
-  levelRequirement: 1
-  unlocksAbilities: []
+  levelRequirement: 12
+  unlocksAbilities:
+  - ARMAGEDDON
   unlockedOnStart: 0
   abilityType: 2
   currentUpgradeLevel: 0

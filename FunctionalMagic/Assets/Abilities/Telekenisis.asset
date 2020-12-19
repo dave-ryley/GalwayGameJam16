@@ -25,8 +25,8 @@ MonoBehaviour:
   - FIREBALL
   - CREEPING_FROST
   - LIGHTNING_BOLT
-  - PARANOIA
+  - IMMORTALITY
   unlockedOnStart: 1
   abilityType: 0
-  currentUpgradeLevel: 0
+  currentUpgradeLevel: 1
   unlocked: 1

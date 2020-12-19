@@ -22,9 +22,8 @@ MonoBehaviour:
   - Chance to deal double damage 20%
   - Chance to deal double damage 40%
   levelRequirement: 5
-  unlocksAbilities:
-  - HIGH_VOLTAGE
+  unlocksAbilities: []
   unlockedOnStart: 0
   abilityType: 1
   currentUpgradeLevel: 0
-  unlocked: 0
+  unlocked: 1

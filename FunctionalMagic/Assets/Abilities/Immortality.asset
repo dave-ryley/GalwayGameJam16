@@ -16,12 +16,13 @@ MonoBehaviour:
   abilityName: Immortality
   image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
   upgradeLevels: 1
-  description: <i>How do you kill that which has no life?</i>
+  description: Falling to 0HP no longer causes you to die. <i>How do you kill that
+    which has no life?</i>
   descriptionPerUpgradeLevel:
   - 
   levelRequirement: 9001
   unlocksAbilities: []
-  unlockedOnStart: 1
+  unlockedOnStart: 0
   abilityType: 3
   currentUpgradeLevel: 0
-  unlocked: 0
+  unlocked: 1

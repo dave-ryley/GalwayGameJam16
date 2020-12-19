@@ -27,7 +27,6 @@ MonoBehaviour:
   levelRequirement: 15
   unlocksAbilities:
   - VIOLENT_COMBUSTION
-  - ARMAGEDDON
   unlockedOnStart: 0
   abilityType: 0
   currentUpgradeLevel: 0
