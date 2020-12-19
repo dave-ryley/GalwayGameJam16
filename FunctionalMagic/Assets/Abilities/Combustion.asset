@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: COMBUSTION
   abilityName: Combustion
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: 1ab3b15467f7e2549adf94a54620b6b8, type: 3}
   upgradeLevels: 5
   description: 'Burn an enemy for second for 5 seconds, applying this skill again
     refreshes the duration <b>Mana cost: 50</b>'

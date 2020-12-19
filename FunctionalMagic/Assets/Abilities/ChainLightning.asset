@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: CHAIN_LIGHTNING
   abilityName: Chain Lightning
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: 55757da7b2856cb4c8d12a89aece2af8, type: 3}
   upgradeLevels: 5
   description: 'Fire a Lightning bolt that jumps between enemies in a 10 meter radius
     dealing 30% less damage each time it jumps <b>Mana cost: 40</b>'
@@ -30,4 +30,4 @@ MonoBehaviour:
   unlockedOnStart: 0
   abilityType: 0
   currentUpgradeLevel: 0
-  unlocked: 1
+  unlocked: 0

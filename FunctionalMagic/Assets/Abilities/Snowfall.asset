@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: SNOWFALL
   abilityName: Snowfall
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: e6a4f6cfce1f840408a80aac78bc5339, type: 3}
   upgradeLevels: 5
   description: 'Make it snow in a large area around a targeted enemy. Enemies in
     snowy areas have 15% reduced speed and have a chance to be frozen for 2 seconds

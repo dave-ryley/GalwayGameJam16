@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: ICE_SPEAR
   abilityName: Ice Spear
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: edbedd5ae40e47744a780e3f59be9a15, type: 3}
   upgradeLevels: 3
   description: Ice shards deal additional damage for each ice spear in the enemy.
     Increases the maximum number of ice shards you can impale the enemy with.

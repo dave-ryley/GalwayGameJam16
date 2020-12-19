@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: SCORCHED_EARTH
   abilityName: Scorched Earth
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: fe4fded232eae7542a0effebd7e92745, type: 3}
   upgradeLevels: 9
   description: Enemies killed by fire damage have a chance to create burning ground
     for 5 seconds when they die. All fire damage is also increased

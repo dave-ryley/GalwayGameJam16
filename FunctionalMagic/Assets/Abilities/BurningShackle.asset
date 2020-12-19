@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: BURNING_SHACKLE
   abilityName: Burning Shackle
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: e64a4102fe5bcae42adf7fef5810eb1f, type: 3}
   upgradeLevels: 5
   description: 'Connect yourself to a targeted enemy with a chain of fire dealing
     fire damage each second to the connected enemy and all other enemies that come

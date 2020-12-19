@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: THUNDERSTRUCK
   abilityName: Thunderstruck
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: 4f3b47bfddc064046b1b059092573e28, type: 3}
   upgradeLevels: 3
   description: The targeted enemy is thrown further and receives increased damage
     from all sources for 3 seconds after landing

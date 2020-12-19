@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: THUNDERSTORM
   abilityName: Thunderstorm
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: 5e81499805c35d34eae581e494aea9c8, type: 3}
   upgradeLevels: 3
   description: 'A Lightning bolt strikes enemies in a 50 meter radius once a second
     for 10 seconds. Lightning bolts cast from Thunderstorm deal increased damage

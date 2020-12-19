@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: THUNDERBOLT
   abilityName: Thunderbolt
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: 1081bf5614cde624da914754778b0b61, type: 3}
   upgradeLevels: 3
   description: Lightning Bolt has a chance to deal double damage
   descriptionPerUpgradeLevel:
@@ -26,4 +26,4 @@ MonoBehaviour:
   unlockedOnStart: 0
   abilityType: 1
   currentUpgradeLevel: 0
-  unlocked: 1
+  unlocked: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: LIGHTNING_BOLT
   abilityName: Lightning Bolt
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: edd44e3bb6de1b244aec8a3e7c4b5a6e, type: 3}
   upgradeLevels: 5
   description: 'Call down lightning onto an enemy dealing lightning damage with a
     chance to stun the enemy for 1 second <b>Mana cost: 20</b>'
@@ -31,4 +31,4 @@ MonoBehaviour:
   unlockedOnStart: 0
   abilityType: 0
   currentUpgradeLevel: 0
-  unlocked: 0
+  unlocked: 1

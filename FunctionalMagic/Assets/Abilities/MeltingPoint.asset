@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: MELTING_POINT
   abilityName: Melting Point
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: 22c77c30acb6cf54487c8b16ddd80d5f, type: 3}
   upgradeLevels: 5
   description: 'Rapidly heat all the ice and frost in the area turning it into burning
     ground dealing  fire damage to all enemies that come in contact. Ice shards impaled

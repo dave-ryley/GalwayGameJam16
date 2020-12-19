@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: SEARING_BOND
   abilityName: Searing Bond
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: cafae2ee0273d65449c105fe67249c61, type: 3}
   upgradeLevels: 3
   description: All enemies in contact with the chain take increased fire damage from
     all sources, this value is doubled for the shackled enemy

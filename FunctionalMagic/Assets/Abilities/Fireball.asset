@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: FIREBALL
   abilityName: Fireball
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: ad2aa346b4977224683ebafe72d0df53, type: 3}
   upgradeLevels: 5
   description: 'Throw a fireball at an enemy dealing fire damage on impact with a
     20% chance to ignite the enemy for for 5 seconds <b>Mana cost: 30</b>'
@@ -31,4 +31,4 @@ MonoBehaviour:
   unlockedOnStart: 0
   abilityType: 0
   currentUpgradeLevel: 0
-  unlocked: 0
+  unlocked: 1

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: LINGERING_FROST
   abilityName: Lingering Frost
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: 2dd5c6543614df940bf6e3bc2ffcf0b4, type: 3}
   upgradeLevels: 3
   description: Frozen ground lasts longer and has increased enemy speed reduction
   descriptionPerUpgradeLevel:

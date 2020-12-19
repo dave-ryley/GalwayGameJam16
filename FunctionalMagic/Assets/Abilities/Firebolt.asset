@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: FIREBOLT
   abilityName: Firebolt
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: 6faaea86290cf5f4a8f934c9419702dc, type: 3}
   upgradeLevels: 3
   description: Increase fireball cast speed
   descriptionPerUpgradeLevel:

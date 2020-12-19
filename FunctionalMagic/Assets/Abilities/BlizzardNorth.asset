@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: BLIZZARD_NORTH
   abilityName: Blizzard North
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: a419a84e350eef54abc8e6aa8210f66a, type: 3}
   upgradeLevels: 2
   description: Reduce the cooldown of Blizzard
   descriptionPerUpgradeLevel:

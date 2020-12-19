@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: THUNDERGOD
   abilityName: Twilight of the Thundergod
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: dfd16b2a5506b224faf2f0619a8072a6, type: 3}
   upgradeLevels: 3
   description: For a short duration after casting Mjolnir all the damage you deal
     is converted to lightning damage and your chance to deal double or triple damage

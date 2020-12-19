@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: CREEPING_FROST
   abilityName: Creeping Frost
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: b74fe5a9b26a0354e934bf03b0d0f5ad, type: 3}
   upgradeLevels: 5
   description: 'Icy shards slowly crawl toward a targeted enemy dealing frost damage
     on impact and freezing the ground it passes for a short duration. Frozen ground
@@ -32,4 +32,4 @@ MonoBehaviour:
   unlockedOnStart: 0
   abilityType: 0
   currentUpgradeLevel: 0
-  unlocked: 0
+  unlocked: 1

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: IMMORTALITY
   abilityName: Immortality
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: 110717be97c72eb46a642f4d12252e7a, type: 3}
   upgradeLevels: 1
   description: Falling to 0HP no longer causes you to die. <i>How do you kill that
     which has no life?</i>

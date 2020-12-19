@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: VIOLENT_COMBUSTION
   abilityName: Violent Combustion
-  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
+  image: {fileID: 21300000, guid: 66949161d54ac1d46827ed7edaba2869, type: 3}
   upgradeLevels: 3
   description: Enemies killed by combustion explode applying combustion to all nearby
     enemies. Combustion applied this way deals 25% less damage
