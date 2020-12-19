@@ -8,6 +8,7 @@ public class NPCEditor : Editor
 {
     public void OnSceneGUI()
     {
+        Debug.Log("onSceneGUI");
         var t = target as NPC;
 
         Transform child = t.transform.GetChild(0);
