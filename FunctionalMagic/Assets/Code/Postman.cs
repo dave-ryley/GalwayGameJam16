@@ -59,7 +59,7 @@ public class Postman : MonoBehaviour
     {
         Vector3 distance = player.GetPosition() - transform.position;
         distance.z = 0f;
-        bool nowInRange = distance.sqrMagnitude < NPC.squareDistanceRequired/2;
+        bool nowInRange = distance.sqrMagnitude < NPC.squareDistanceRequired/5 && player.GetPosition().y >= transform.position.y;
         if (nowInRange)
         {
             callOverSequence = false;

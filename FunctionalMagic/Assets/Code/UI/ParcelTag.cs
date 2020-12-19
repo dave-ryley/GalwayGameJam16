@@ -11,6 +11,7 @@ public class ParcelTag : MonoBehaviour
 
     void Start()
     {
+        transform.GetChild(0).gameObject.SetActive(false);
         GameLogic game = GameLogic.GetInstance();
         Player player = game.GetPlayer();
 
@@ -37,14 +38,14 @@ public class ParcelTag : MonoBehaviour
         }
         if(parcel != null)
         {
-            gameObject.SetActive(true);
+            transform.GetChild(0).gameObject.SetActive(true);
             fromText.text = parcel.from;
             toText.text = parcel.deliverTo.characterName;
             noteText.text = parcel.note;
         }
         else
         {
-            gameObject.SetActive(false);
+            transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 }
