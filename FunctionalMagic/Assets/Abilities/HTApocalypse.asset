@@ -21,7 +21,7 @@ MonoBehaviour:
   descriptionPerUpgradeLevel:
   - 'Burning ground damage: 40 per second'
   - 'Burning ground damage: 60 per second'
-  levelRequirement: 40
+  levelRequirement: 35
   unlocksAbilities: []
   unlockedOnStart: 0
   abilityType: 1

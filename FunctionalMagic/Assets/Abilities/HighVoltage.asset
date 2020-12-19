@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: HIGH_VOLTAGE
   abilityName: High Voltage
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 727df722dfff7ec4b9a1480042b08fc3, type: 3}
   upgradeLevels: 9
   description: (Danger! Danger!) All Lightning damage has additional chance to deal
     double or triple damage
@@ -36,9 +36,9 @@ MonoBehaviour:
     damage: 10%'
   - 'Additional chance to deal double damage: 40%, Additional chance to deal triple
     damage: 15%'
-  levelRequirement: 1
+  levelRequirement: 12
   unlocksAbilities: []
   unlockedOnStart: 0
   abilityType: 2
   currentUpgradeLevel: 0
-  unlocked: 0
+  unlocked: 1

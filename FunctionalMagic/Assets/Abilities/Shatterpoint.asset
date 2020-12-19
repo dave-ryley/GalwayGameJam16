@@ -28,7 +28,7 @@ MonoBehaviour:
   - 'Life as damage: 7%'
   - 'Life as damage: 8%'
   - 'Life as damage: 10%'
-  levelRequirement: 1
+  levelRequirement: 18
   unlocksAbilities: []
   unlockedOnStart: 0
   abilityType: 2

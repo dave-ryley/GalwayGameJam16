@@ -23,7 +23,7 @@ MonoBehaviour:
   - 'Impact damage: 90'
   - 'Impact damage: 150'
   - 'Impact damage: 300'
-  levelRequirement: 30
+  levelRequirement: 25
   unlocksAbilities:
   - HTAPOCALYPSE
   unlockedOnStart: 0

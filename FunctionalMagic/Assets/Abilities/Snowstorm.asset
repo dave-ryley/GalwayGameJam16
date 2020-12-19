@@ -22,8 +22,7 @@ MonoBehaviour:
   - +10 meters
   - +15 meters
   levelRequirement: 10
-  unlocksAbilities:
-  - SHATTERPOINT
+  unlocksAbilities: []
   unlockedOnStart: 0
   abilityType: 1
   currentUpgradeLevel: 0
