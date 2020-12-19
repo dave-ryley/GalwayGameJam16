@@ -4722,6 +4722,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &197691809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2824212632968854589, guid: 3afd91f8fae1d234880304fbd70bae1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1862664769}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &197691814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197691809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6777a73e02c63fe4297d6fb11abf20a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heyOverHere:
+  - Hey!
+  - Over Here!
+  - I need your help!
+  introDialog:
+  - My cart boke down and now I can't deliver all these heavy packages!
+  - I'm sure a powerful wizzard like you has a spell that can help me out!
+  curIntroIndex: 0
+  callOverSequence: 1
+  tutorialSequence: 0
+  timer: 0
 --- !u!1 &203332050
 GameObject:
   m_ObjectHideFlags: 0
@@ -20227,7 +20256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.0009765625, y: 0}
+  m_AnchoredPosition: {x: 0.00088500977, y: 0}
   m_SizeDelta: {x: 600, y: 800}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &748123405
@@ -23479,6 +23508,7 @@ MonoBehaviour:
   characterCreaterCam: {fileID: 681375156}
   wideShot: {fileID: 620060235}
   closeShot: {fileID: 1938122436}
+  npcsInRange: 0
   music:
   - {fileID: 8300000, guid: 32f210331a4346540b8d34c62e634113, type: 3}
   - {fileID: 8300000, guid: 4215049be094dec42b82f43b6c5f1b45, type: 3}
@@ -35648,7 +35678,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 449139046}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.9999989
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -36855,6 +36885,7 @@ MonoBehaviour:
   footstepsAudioSource2: {fileID: 467414504}
   holdPackageAudioSource: {fileID: 1615820393}
   holdPackageAudioSourceLoop: {fileID: 414554577}
+  allowedToLevitate: 0
   heldParcel: {fileID: 0}
   highlightedParcel: {fileID: 0}
   events: {fileID: 1301944693}
@@ -51376,6 +51407,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824212632968854529, guid: 3afd91f8fae1d234880304fbd70bae1e,
+        type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 0.208
       objectReference: {fileID: 0}
     - target: {fileID: 2824212632968854589, guid: 3afd91f8fae1d234880304fbd70bae1e,
         type: 3}
