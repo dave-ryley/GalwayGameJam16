@@ -115,6 +115,7 @@ public class PlayerLevel : MonoBehaviour
             }
             _player.PlayAbilityUnlockedAudio();
             _player.AddAbilitySpeed();
+            _player.allowedToLevitate = true;
             _player.events.DispatchEvent("onPlayerAbilityAdded");
         }
     }
