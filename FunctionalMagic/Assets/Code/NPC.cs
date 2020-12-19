@@ -9,6 +9,12 @@ public class NPC : MonoBehaviour
     public bool playerInRange = false;
     [SerializeField] private DialogBox _dialogBox;
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private string greetingText = "Hello Friend!";
+    [SerializeField] private string goodbyeText = "Goodbye!";
+    [SerializeField] private string abilityToBeImpressedBy = "LEVITATION";
+    [SerializeField] private int abilityLevel = 1;
+    [SerializeField] private string notImpressedText = "Huh, you don't even have a LEVITATION level 1 skill...";
+    [SerializeField] private string impressedText = "Wow, I'm impressed. You have LEVITATION level 1!";
 
     public string characterName;
     public bool includedInDeliveryList = true;
@@ -37,13 +43,13 @@ public class NPC : MonoBehaviour
                 }
                 else
                 {
-                    Say("Hello Friend!", 2f);
+                    Say(greetingText, 2f);
                 }
                 GameLogic.GetInstance().EnterRangeOfNPC();
             }
             else
             {
-                Say("Goodbye!");
+                Say(goodbyeText);
                 GameLogic.GetInstance().ExitRangeOfNPC();
             }
         }
