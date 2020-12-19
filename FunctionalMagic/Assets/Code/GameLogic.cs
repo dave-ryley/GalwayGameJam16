@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,9 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(EventManager))]
 public class GameLogic : MonoBehaviour
 {
+    public enum GameStage { CharacterCreation, CallOver, Tutorial, MainGame }
+
+    public GameStage curGameStage = GameStage.CharacterCreation;
     private static GameLogic instance;
     private int _fullScreenPanelCountOpen = 0;
     private List<NPC> _npcs;
@@ -15,16 +19,39 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private ParcelManager parcelManager;
     [SerializeField] private Ability[] abilities;
 
+    [SerializeField] private CinemachineVirtualCamera characterCreaterCam;
+    [SerializeField] private CinemachineVirtualCamera wideShot;
+    [SerializeField] private CinemachineVirtualCamera closeShot;
+
     private int changeMusicEveryXLevels = 5;
     private int curMusicIndex = 0;
+    private int npcsInRange = 0;
     [SerializeField] private AudioClip [] music;
     [SerializeField] private AudioSource musicPlayer;
     [SerializeField] private AudioClip uiClickSound;
     [SerializeField] private AudioClip uiHoverSound;
     [SerializeField] private AudioSource uiAudioSource;
 
+    internal void EnterRangeOfNPC()
+    {
+        if(npcsInRange == 0)
+        {
+            closeShot.Priority = 30;
+        }
+        npcsInRange++;
+    }
+
     public Player player;
     public EventManager events;
+
+    internal void ExitRangeOfNPC()
+    {
+        npcsInRange--;
+        if(npcsInRange == 0)
+        {
+            closeShot.Priority = 0;
+        }
+    }
 
     public CharacterSheet characterSheet;
 
@@ -38,7 +65,6 @@ public class GameLogic : MonoBehaviour
     void Awake()
     {
         instance = this;
-        events = GetComponent<EventManager>();
         _npcs = new List<NPC>();
         NPC[] npcs = FindObjectsOfType<NPC>();
         if(npcs.Length == 0)
@@ -168,6 +194,12 @@ public class GameLogic : MonoBehaviour
     public void PlayClickAudio()
     {
         PlayAudio(uiAudioSource, uiClickSound);
+    }
+
+    public void CompleteCharacterCreation()
+    {
+        characterCreaterCam.Priority = 0;
+        curGameStage = GameStage.CallOver;
     }
 
     #endregion

@@ -8,12 +8,13 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D player;
+    [SerializeField] private GameObject spriteGroup;
+    [SerializeField] private Animator animator;
     [SerializeField] private PlayerNotification alert;
     [SerializeField] private float _parcelGrabDistanceSq = 5f;
     [SerializeField] private float _parcelHoldDistance = 5f;
 
     [SerializeField] private AudioClip liftParcel;
-    [SerializeField] private AudioClip holdParcel;
     [SerializeField] private AudioClip dropParcel;
     [SerializeField] private AudioClip [] footsteps;
     [SerializeField] private AudioClip addXPSFX;
@@ -24,7 +25,15 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioSource footstepsAudioSource1;
     [SerializeField] private AudioSource footstepsAudioSource2;
     [SerializeField] private AudioSource holdPackageAudioSource;
+    [SerializeField] private AudioSource holdPackageAudioSourceLoop;
 
+    private Hat hat;
+    private Hair hair;
+    private Color skinColor;
+    private Color clothingColor;
+
+    private bool running = false;
+    private bool holdingParcel = false;
     private List<Ability> _acquiredAbilities;
     private Vector3 _parcelOffset;
     public Parcel heldParcel;
@@ -61,12 +70,20 @@ public class Player : MonoBehaviour
         source.Play();
     }
 
-    private void PlayFootstep()
+    public void PlayFootstep()
     {
         int randomFootstep = UnityEngine.Random.Range(0, footsteps.Length);
         AudioSource source = (useFootstep1) ? footstepsAudioSource1 : footstepsAudioSource2;
         useFootstep1 = !useFootstep1;
         PlayAudio(source, footsteps[randomFootstep]);
+    }
+
+    public void UpdatePlayerVisuals(PlayerVisuals playerVisuals)
+    {
+        playerVisuals.SetHairstyle(hair);
+        playerVisuals.SetHat(hat);
+        playerVisuals.SetSkinColor(skinColor);
+        playerVisuals.SetClothingColor(clothingColor);
     }
 
     internal void BuildAbilityTree(Ability[] abilities)
@@ -80,8 +97,30 @@ public class Player : MonoBehaviour
         player.velocity = movement * speed;
         if(movement.sqrMagnitude != 0)
         {
+            if(!running)
+            {
+                animator.SetBool("Running", true);
+                running = true;
+            }
             _parcelOffset = movement * _parcelHoldDistance;
             _parcelOffset.y /= 3;
+        }
+        else
+        {
+            if(running)
+            {
+                animator.SetBool("Running", false);
+                running = false;
+            }
+        }
+        if(movement.x != 0)
+        {
+            float xScale = 1f;
+            if(movement.x < 0)
+            {
+                xScale = -1f;
+            }
+            spriteGroup.transform.localScale = new Vector3(xScale, 1f, 1f);
         }
     }
 
@@ -94,7 +133,13 @@ public class Player : MonoBehaviour
                 heldParcel = highlightedParcel;
                 highlightedParcel = null;
                 heldParcel.SetHeld(true);
+                if(!holdingParcel)
+                {
+                    holdingParcel = true;
+                    animator.SetBool("HoldParcel", true);
+                }
                 PlayAudio(holdPackageAudioSource, liftParcel, false);
+                holdPackageAudioSourceLoop.Play();
                 events.DispatchEvent("onPlayerGrabParcel");
             }
         }
@@ -104,7 +149,13 @@ public class Player : MonoBehaviour
             {
                 heldParcel.SetHeld(false);
                 heldParcel = null;
+                if(holdingParcel)
+                {
+                    holdingParcel = false;
+                    animator.SetBool("HoldParcel", false);
+                }
                 PlayAudio(holdPackageAudioSource, dropParcel, false);
+                holdPackageAudioSourceLoop.Stop();
                 events.DispatchEvent("onPlayerDropParcel");
             }
         }
@@ -174,6 +225,34 @@ public class Player : MonoBehaviour
             highlightedParcel = null;
             events.DispatchEvent("onPlayerClearParcelHighlight");
         }
+    }
+
+    public void SetSkinColor(Color color)
+    {
+        skinColor = color;
+        PlayerVisuals playerVisuals = player.GetComponent<PlayerVisuals>();
+        playerVisuals.SetSkinColor(skinColor);
+    }
+
+    public void SetClothingColor(Color color)
+    {
+        clothingColor = color;
+        PlayerVisuals playerVisuals = player.GetComponent<PlayerVisuals>();
+        playerVisuals.SetClothingColor(clothingColor);
+    }
+
+    public void SetHairstyle(Hair hair)
+    {
+        this.hair = hair;
+        PlayerVisuals playerVisuals = player.GetComponent<PlayerVisuals>();
+        playerVisuals.SetHairstyle(hair);
+    }
+
+    public void SetHat(Hat hat)
+    {
+        this.hat = hat;
+        PlayerVisuals playerVisuals = player.GetComponent<PlayerVisuals>();
+        playerVisuals.SetHat(hat);
     }
 
     internal void AddAbilitySpeed()

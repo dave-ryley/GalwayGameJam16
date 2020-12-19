@@ -39,10 +39,12 @@ public class NPC : MonoBehaviour
                 {
                     Say("Hello Friend!", 2f);
                 }
+                GameLogic.GetInstance().EnterRangeOfNPC();
             }
             else
             {
                 Say("Goodbye!");
+                GameLogic.GetInstance().ExitRangeOfNPC();
             }
         }
     }
